@@ -1,3 +1,4 @@
+import 'package:expense_tracker/common/my_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,7 @@ class HomeView extends GetView<HomeController> {
         () => pages[controller.tabIndex],
       ),
       bottomNavigationBar: Container(
-        height: 60,
+        height: 70,
         decoration: const BoxDecoration(
           color: Colors.white,
         ),
@@ -65,7 +66,7 @@ class HomeView extends GetView<HomeController> {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.pink,
+        backgroundColor: primaryColor,
         onPressed: () {},
         child: const Center(
           child: Icon(Icons.add, color: Colors.white),
@@ -105,15 +106,15 @@ class BottomNavItem extends StatelessWidget {
                   Icon(
                     activeIcon,
                     color: c.tabIndex == index
-                        ? const Color(0xff4232E3)
-                        : const Color(0xFF3F3F3F),
+                        ? primaryColor
+                        : const Color(0xFFB0A9A9),
                   ),
                   Text(
                     title,
                     style: TextStyle(
                         color: c.tabIndex == index
-                            ? const Color(0xff4232E3)
-                            : const Color(0xFF3F3F3F),
+                            ? primaryColor
+                            : const Color(0xFFB0A9A9),
                         fontWeight: FontWeight.w700,
                         fontSize: 11.sp),
                   ),
