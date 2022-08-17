@@ -21,55 +21,57 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Obx(
-        () => pages[controller.tabIndex],
-      ),
-      bottomNavigationBar: Container(
-        height: 70,
-        decoration: const BoxDecoration(
-          color: Colors.white,
+    return SafeArea(
+      child: Scaffold(
+        body: Obx(
+          () => pages[controller.tabIndex],
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: const [
-            Expanded(
-              child: BottomNavItem(
-                title: "Daily",
-                activeIcon: CupertinoIcons.calendar,
-                index: 0,
+        bottomNavigationBar: Container(
+          height: 70,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: const [
+              Expanded(
+                child: BottomNavItem(
+                  title: "Daily",
+                  activeIcon: CupertinoIcons.calendar,
+                  index: 0,
+                ),
               ),
-            ),
-            Expanded(
-              child: BottomNavItem(
-                title: "Stats",
-                activeIcon: CupertinoIcons.chart_bar_alt_fill,
-                index: 1,
+              Expanded(
+                child: BottomNavItem(
+                  title: "Stats",
+                  activeIcon: CupertinoIcons.chart_bar_alt_fill,
+                  index: 1,
+                ),
               ),
-            ),
-            Expanded(
-              child: BottomNavItem(
-                title: "Budget",
-                activeIcon: Icons.account_balance_wallet,
-                index: 2,
+              Expanded(
+                child: BottomNavItem(
+                  title: "Budget",
+                  activeIcon: Icons.account_balance_wallet,
+                  index: 2,
+                ),
               ),
-            ),
-            Expanded(
-              child: BottomNavItem(
-                title: "Profile",
-                activeIcon: CupertinoIcons.profile_circled,
-                index: 3,
+              Expanded(
+                child: BottomNavItem(
+                  title: "Profile",
+                  activeIcon: CupertinoIcons.profile_circled,
+                  index: 3,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: primaryColor,
-        onPressed: () {},
-        child: const Center(
-          child: Icon(Icons.add, color: Colors.white),
+        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: primaryColor,
+          onPressed: () {},
+          child: const Center(
+            child: Icon(Icons.add, color: Colors.white),
+          ),
         ),
       ),
     );
