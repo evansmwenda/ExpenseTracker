@@ -13,9 +13,10 @@ class DailyView extends GetView<DailyController> {
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       color: const Color(0xfff5f5f5),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Daily Transaction",
+            "Daily transaction",
             style: TextStyle(
               fontSize: 20.sp,
             ),
