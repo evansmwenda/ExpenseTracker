@@ -8,7 +8,6 @@ class StatsView extends GetView<StatsController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.greenAccent,
       child: Center(
         child: Text("StatsView"),
       ),

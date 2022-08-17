@@ -9,7 +9,6 @@ class BudgetView extends GetView<BudgetController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.blueAccent,
       child: Center(
         child: Text("BudgetView"),
       ),

@@ -9,7 +9,7 @@ class DailyView extends GetView<DailyController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-    color: Colors.red,
+      color: const Color(0xfff5f5f5),
     child: Center(
   child: Text("DailyView"),
   ),

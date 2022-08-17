@@ -64,7 +64,7 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
       floatingActionButton: FloatingActionButton(
         backgroundColor: primaryColor,
         onPressed: () {},

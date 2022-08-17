@@ -8,7 +8,6 @@ class ProfileView extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.pink,
       child: Center(
         child: Text("ProfileView"),
       ),
