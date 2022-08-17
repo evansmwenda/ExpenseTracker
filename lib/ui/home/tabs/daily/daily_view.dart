@@ -1,6 +1,8 @@
+import 'package:expense_tracker/common/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:weekly_date_picker/weekly_date_picker.dart';
 
 import 'daily_controller.dart';
 
@@ -25,17 +27,28 @@ class DailyView extends GetView<DailyController> {
             height: 30.h,
           ),
           Container(
-            height: 40.h,
-            width: double.infinity,
-            color: Colors.red,
-            child: Text("Day picker heere"),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.r),
+            ),
+            child: Obx(() =>WeeklyDatePicker(
+              selectedDay: controller.selectedDay,
+              changeDay: (value) {
+                controller.changeSelectedDay(value);
+              },
+              enableWeeknumberText: false,
+              backgroundColor: Colors.white,
+              weekdayTextColor: const Color(0xFF8A8A8A),
+              selectedBackgroundColor: primaryColor,
+              weekdays: ["Su","Mo", "Tu", "We", "Th", "Fr","Sa"],
+              daysInWeek: 7,
+            )),
           ),
           SizedBox(
             height: 30.h,
           ),
           Expanded(
             child: ListView.separated(
-                itemCount: 5,
+                itemCount: 15,
                 separatorBuilder: (context, index) {
                   return Divider(
                     color: Colors.grey.withOpacity(0.5),
@@ -60,7 +73,7 @@ class DailyView extends GetView<DailyController> {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
+            children: const [
               Text(
                 "Total",
                 style: TextStyle(
