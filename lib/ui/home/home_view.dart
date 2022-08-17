@@ -20,10 +20,9 @@ class HomeView extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Obx(
-            () => pages[controller.tabIndex],
+        () => pages[controller.tabIndex],
       ),
       bottomNavigationBar: Container(
         height: 60,
@@ -32,36 +31,44 @@ class HomeView extends GetView<HomeController> {
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children:  const [
+          children: const [
             Expanded(
               child: BottomNavItem(
-                title: "Dashboard",
-                activeIcon: Icons.dashboard,
+                title: "Daily",
+                activeIcon: CupertinoIcons.calendar,
                 index: 0,
               ),
             ),
             Expanded(
               child: BottomNavItem(
-                title: "Services",
-                activeIcon: CupertinoIcons.envelope_open,
+                title: "Stats",
+                activeIcon: CupertinoIcons.chart_bar_alt_fill,
                 index: 1,
               ),
             ),
             Expanded(
               child: BottomNavItem(
-                title: "My Documents",
-                activeIcon: CupertinoIcons.doc_text,
+                title: "Budget",
+                activeIcon: Icons.account_balance_wallet,
                 index: 2,
               ),
             ),
             Expanded(
               child: BottomNavItem(
-                title: "My Profile",
+                title: "Profile",
                 activeIcon: CupertinoIcons.profile_circled,
                 index: 3,
               ),
             ),
           ],
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.pink,
+        onPressed: () {},
+        child: const Center(
+          child: Icon(Icons.add, color: Colors.white),
         ),
       ),
     );
@@ -86,7 +93,7 @@ class BottomNavItem extends StatelessWidget {
     return InkWell(
         onTap: () => c.changeIndex(index: index),
         child: Obx(
-              () => Container(
+          () => Container(
               margin: const EdgeInsets.only(
                 left: 10,
                 right: 10,
