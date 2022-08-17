@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'home_controller.dart';
+import 'tabs/daily/daily_view.dart';
+import 'tabs/stats/stats_view.dart';
+import 'tabs/budget/budget_view.dart';
+import 'tabs/profile/profile_view.dart';
 
 class HomeView extends GetView<HomeController> {
   HomeView({Key? key}) : super(key: key);
