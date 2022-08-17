@@ -17,7 +17,7 @@ class CounterPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text("Counter value:",style: TextStyle(fontSize: 20),),
-            Obx(() => Text(c.count.toString(),style: TextStyle(fontSize: 23),)),
+            Obx(() => Text(c.count.toString(),style: const TextStyle(fontSize: 23),)),
           ],
         ),
       ),

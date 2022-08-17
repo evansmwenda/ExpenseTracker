@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import 'config/controller_binding.dart';
@@ -14,13 +15,18 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+    minTextAdapt: true,
+    splitScreenMode: true,
+    builder: (context , child) {
     return GetMaterialApp(
       initialBinding: ControllerBinding(),
       debugShowCheckedModeBanner: false,
       enableLog: true,
       smartManagement: SmartManagement.keepFactory,
       home: CounterPage(),
-    );
+    );});
   }
 }
 
