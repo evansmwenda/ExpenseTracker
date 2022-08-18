@@ -1,4 +1,5 @@
 import 'package:expense_tracker/common/my_colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -39,7 +40,7 @@ class DailyView extends GetView<DailyController> {
               backgroundColor: Colors.white,
               weekdayTextColor: const Color(0xFF8A8A8A),
               selectedBackgroundColor: primaryColor,
-              weekdays: ["Su","Mo", "Tu", "We", "Th", "Fr","Sa"],
+              weekdays: const ["Su","Mo", "Tu", "We", "Th", "Fr","Sa"],
               daysInWeek: 7,
             )),
           ),
@@ -58,7 +59,21 @@ class DailyView extends GetView<DailyController> {
                   return ListTile(
                     contentPadding: EdgeInsets.zero,
                     dense: true,
-                    leading: const Icon(Icons.list),
+                    leading: Container(
+                      height: 40.w,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25.r),
+                        color: primaryColor,
+                      ),
+                      child: const Center(
+                        child: Icon(
+                          CupertinoIcons.arrow_3_trianglepath,
+                          color: Colors.white,
+                          size: 20,
+                        ),
+                      ),
+                    ),
                     trailing: const Text(
                       "\$ 340.40",
                       style: TextStyle(

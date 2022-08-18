@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../../widgets/month_button.dart';
+import '../../../widgets/my_month_picker.dart';
 import 'stats_controller.dart';
 
 class StatsView extends GetView<StatsController> {
@@ -23,16 +25,14 @@ class StatsView extends GetView<StatsController> {
             ),
           ),
           SizedBox(
-            height: 30.h,
-          ),
-          Container(
-            height: 40.h,
-            width: double.infinity,
-            color: Colors.green,
-            child: const Text("Month picker heere"),
+            height: 10.h,
           ),
           SizedBox(
-            height: 30.h,
+            height: 40.h,
+            child: MyMonthPicker(),
+          ),
+          SizedBox(
+            height: 10.h,
           ),
           Container(
             height: 240.h,
@@ -41,7 +41,7 @@ class StatsView extends GetView<StatsController> {
             child: const Text("Bar Chart Here"),
           ),
           SizedBox(
-            height: 30.h,
+            height: 20.h,
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             const Expanded(

@@ -22,7 +22,7 @@ class BudgetView extends GetView<BudgetController> {
             ),
           ),
           SizedBox(
-            height: 30.h,
+            height: 10.h,
           ),
           Container(
             height: 40.h,
@@ -42,7 +42,7 @@ class BudgetView extends GetView<BudgetController> {
                   );
                 },
                 itemBuilder: (BuildContext context, int index) {
-                  return BudgetContainer(
+                  return const BudgetContainer(
                     title: "Food",
                   );
                 }),
@@ -95,37 +95,38 @@ class BudgetContainer extends StatelessWidget {
                   children: [
                      TextSpan(
                         text: 'KES 2,492',
-                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red)),
+                        style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black)),
                     WidgetSpan(
                       child: Padding(
                         padding: EdgeInsets.only(left: 10.0),
                       ),
                     ),
-                    TextSpan(text: ' 50%',style: TextStyle(color: Colors.green)),
+                    TextSpan(text: ' 70%',style: TextStyle(color: Colors.grey)),
                   ],
                 ),
               ),
               Text(
                 "KES 50,000",
                 style: TextStyle(
-                  fontSize: 20.sp,
-                  fontWeight: FontWeight.w700,
+                  fontSize: 18.sp,
+                  color: Colors.grey,
                 ),
               ),
             ],
           ),
           SizedBox(
-            height: 10.h,
+            height: 15.h,
           ),
           Container(
               alignment: Alignment.topCenter,
               child: LinearProgressIndicator(
                 value: 0.7,
-                valueColor: new AlwaysStoppedAnimation<Color>(Colors.deepOrange),
+                //todo calculate color based on the percent value
+                valueColor: AlwaysStoppedAnimation<Color>(bgColor),
               )
           ),
           SizedBox(
-            height: 20.h,
+            height: 25.h,
           ),
           // LinearPercentIndicator(
           //   width: 140.0,
