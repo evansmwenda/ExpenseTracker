@@ -1,3 +1,4 @@
+import 'package:expense_tracker/ui/auth/auth_view.dart';
 import 'package:expense_tracker/ui/home/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       enableLog: true,
       smartManagement: SmartManagement.keepFactory,
-      home: HomeView(),
+      home: AuthView(),
     );});
   }
 }

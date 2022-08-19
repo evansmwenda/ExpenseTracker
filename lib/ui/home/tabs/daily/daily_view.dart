@@ -40,7 +40,7 @@ class DailyView extends GetView<DailyController> {
               backgroundColor: Colors.white,
               weekdayTextColor: const Color(0xFF8A8A8A),
               selectedBackgroundColor: primaryColor,
-              weekdays: const ["Su","Mo", "Tu", "We", "Th", "Fr","Sa"],
+              weekdays: const ["Mo", "Tu", "We", "Th", "Fr","Sa","Su"],
               daysInWeek: 7,
             )),
           ),
