@@ -12,6 +12,7 @@ class DailyView extends GetView<DailyController> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
       color: const Color(0xfff5f5f5),
@@ -31,18 +32,18 @@ class DailyView extends GetView<DailyController> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20.r),
             ),
-            child: Obx(() =>WeeklyDatePicker(
-              selectedDay: controller.selectedDay,
-              changeDay: (value) {
-                controller.changeSelectedDay(value);
-              },
-              enableWeeknumberText: false,
-              backgroundColor: Colors.white,
-              weekdayTextColor: const Color(0xFF8A8A8A),
-              selectedBackgroundColor: primaryColor,
-              weekdays: const ["Mo", "Tu", "We", "Th", "Fr","Sa","Su"],
-              daysInWeek: 7,
-            )),
+            child: Obx(() => WeeklyDatePicker(
+                  selectedDay: controller.selectedDay,
+                  changeDay: (value) {
+                    controller.changeSelectedDay(value);
+                  },
+                  enableWeeknumberText: false,
+                  backgroundColor: Colors.white,
+                  weekdayTextColor: const Color(0xFF8A8A8A),
+                  selectedBackgroundColor: primaryColor,
+                  weekdays: const ["Mo", "Tu", "We", "Th", "Fr", "Sa", "Su"],
+                  daysInWeek: 7,
+                )),
           ),
           SizedBox(
             height: 30.h,

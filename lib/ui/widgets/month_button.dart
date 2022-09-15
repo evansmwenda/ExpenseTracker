@@ -1,3 +1,4 @@
+import 'package:expense_tracker/common/my_colors.dart';
 import 'package:expense_tracker/ui/home/tabs/stats/stats_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +19,7 @@ class MonthButton extends GetView<StatsController> {
           width: 60.w,
           margin: EdgeInsets.only(right: 10.w),
           decoration: BoxDecoration(
-            color: controller.tabIndex == index ? const Color(0xff4B82F0) : Colors.white,
+            color: controller.tabIndex == index ? primaryColor : Colors.white,
             borderRadius: BorderRadius.circular(10.r),
             boxShadow: [
               BoxShadow(

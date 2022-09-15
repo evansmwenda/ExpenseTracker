@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       enableLog: true,
       smartManagement: SmartManagement.keepFactory,
-      home: AuthView(),
+      home: HomeView(),//AuthView(),
     );});
   }
 }

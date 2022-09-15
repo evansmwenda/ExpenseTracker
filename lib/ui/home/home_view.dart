@@ -26,11 +26,10 @@ class HomeView extends GetView<HomeController> {
         body: Obx(
           () => pages[controller.tabIndex],
         ),
-        bottomNavigationBar: Container(
-          height: 70,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-          ),
+        bottomNavigationBar: BottomAppBar( //bottom navigation bar on scaffold
+          color:Colors.white,
+          shape: const CircularNotchedRectangle(), //shape of notch
+          notchMargin: 3,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: const [
@@ -65,12 +64,12 @@ class HomeView extends GetView<HomeController> {
             ],
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           backgroundColor: primaryColor,
           onPressed: () {},
           child: const Center(
-            child: Icon(Icons.add, color: Colors.white),
+            child: Icon(Icons.add,size: 25, color: Colors.white),
           ),
         ),
       ),
