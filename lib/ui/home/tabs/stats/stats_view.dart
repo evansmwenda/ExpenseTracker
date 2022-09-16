@@ -180,12 +180,6 @@ class StatsView extends GetView<StatsController> {
               // margin: 8,
             ),
           ),
-
-
-
-
-
-
       ),
       borderData: FlBorderData(
         show: false,

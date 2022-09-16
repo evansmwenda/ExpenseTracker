@@ -1,4 +1,5 @@
 import 'package:expense_tracker/common/my_colors.dart';
+import 'package:expense_tracker/ui/home/tabs/create-budget/create_budget_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -67,7 +68,12 @@ class HomeView extends GetView<HomeController> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           backgroundColor: primaryColor,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CreateBudgetView()),
+            );
+          },
           child: const Center(
             child: Icon(Icons.add,size: 25, color: Colors.white),
           ),
